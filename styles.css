@@ -11,25 +11,33 @@ h1, h2 {
 }
 
 header {
-  background-color: #1d3557;
-  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 header h2 {
-  margin: 0 0 8px 0;
-  color: #ffffff;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 nav a {
-  color: #a8dadc;
+  color: #e6edc8;
   text-decoration: none;
-  margin-right: 20px;
   font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 6px;
 }
 
 nav a:hover {
+  background-color: #6b8e23;
   color: #ffffff;
-  text-decoration: underline;
 }
 
 main {
@@ -46,7 +54,7 @@ footer {
   margin-top: 40px;
 }
 
-/* ---------- Registration form ---------- */
+
 form {
   background-color: #ffffff;
   padding: 24px;
@@ -116,4 +124,20 @@ main img {
   object-fit: cover;
   border-radius: 10px;
   margin-top: 16px;
+}
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.home-grid img {
+  margin-top: 0;
+}
+
+@media (max-width: 700px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
 }
