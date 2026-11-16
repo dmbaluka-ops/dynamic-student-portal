@@ -2,9 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dynamic Student Portal</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f6fb;
+      color: #2b2d42;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1d3557;
+      padding: 16px 32px;
+    }
+
+    header h2 {
+      margin: 0 0 8px 0;
+      color: #ffffff;
+    }
+
+    nav a {
+      color: #a8dadc;
+      text-decoration: none;
+      margin-right: 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 32px auto;
+      padding: 0 20px;
+    }
+
+    main h1 {
+      color: #1d3557;
+    }
+
+    main img {
+      width: 100%;
+      max-height: 360px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 16px;
+    }
+
+    footer {
+      background-color: #1d3557;
+      color: #ffffff;
+      text-align: center;
+      padding: 14px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello, Portal!</h1>
+
+  <header>
+    <h2>Dynamic Student Portal</h2>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Timetable</a>
+      <a href="#">Register</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Welcome to the Student Portal</h1>
+    <p>
+      This portal helps students check their class timetable,
+      register for courses, and see who else is enrolled.
+      Everything you need for the semester is in one place.
+    </p>
+    <img src="banner.jpg" alt="Students together on campus">
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Dynamic Student Portal. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
