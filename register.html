@@ -82,5 +82,17 @@
     <p>&copy; 2026 Dynamic Student Portal. All rights reserved.</p>
   </footer>
 
+  <script>
+  const form = document.getElementById("register-form");
+  const nameInput = document.getElementById("fullname");
+
+  form.addEventListener("submit", function (event) {
+    if (nameInput.value.trim() === "") {
+      event.preventDefault();
+      alert("Please enter your full name.");
+    }
+  });
+</script>
+
 </body>
 </html>
