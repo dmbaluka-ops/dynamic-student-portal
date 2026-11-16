@@ -18,20 +18,17 @@ if (yearOfStudy === 1) {
 for (let i = 1; i <= 5; i++) {
   console.log("Count: " + i);
 }
-// ---------- Lab 8: student list ----------
+// ---------- Lab 9: students loaded from JSON ----------
 
-// 1. An array of student names (placeholder data for now)
-const students = ["Amina", "Brian", "Chloe", "David", "Esther"];
-
-// 2. Adds ONE student to the page
-function addStudentToPage(name) {
+// Adds ONE student object to the page
+function addStudentToPage(student) {
   const list = document.getElementById("student-list");
   const item = document.createElement("li");
-  item.textContent = name;
+  item.textContent = student.name + " - " + student.course + " (Year " + student.year + ")";
   list.appendChild(item);
 }
 
-// 3. Adds ALL students, clearing the list first
+// Adds ALL students and updates the heading count
 function displayAllStudents(studentArray) {
   const list = document.getElementById("student-list");
   list.innerHTML = "";
@@ -39,10 +36,31 @@ function displayAllStudents(studentArray) {
   for (let i = 0; i < studentArray.length; i++) {
     addStudentToPage(studentArray[i]);
   }
+
+  document.getElementById("student-heading").textContent =
+    "Registered Students (" + studentArray.length + ")";
 }
 
-// 4. Run it when the button is clicked
-const showButton = document.getElementById("show-students");
-showButton.addEventListener("click", function () {
-  displayAllStudents(students);
-});
+// Fetches the JSON, then displays it
+async function loadStudents() {
+  const message = document.getElementById("status-message");
+  message.textContent = "Loading...";
+
+  try {
+    const response = await fetch("students.json");
+
+    if (!response.ok) {
+      throw new Error("Server replied with status " + response.status);
+    }
+
+    const students = await response.json();
+    message.textContent = "";
+    displayAllStudents(students);
+  } catch (error) {
+    message.textContent = "Sorry, the student list could not be loaded.";
+    console.error("Fetch failed:", error);
+  }
+}
+
+// Run it when the button is clicked
+document.getElementById("show-students").addEventListener("click", loadStudents);
