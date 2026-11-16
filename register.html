@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Dynamic Student Portal</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f6fb;
+      color: #2b2d42;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1d3557;
+      padding: 16px 32px;
+    }
+
+    header h2 {
+      margin: 0 0 8px 0;
+      color: #ffffff;
+    }
+
+    nav a {
+      color: #a8dadc;
+      text-decoration: none;
+      margin-right: 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 32px auto;
+      padding: 0 20px;
+    }
+
+    form {
+      background-color: #ffffff;
+      padding: 24px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 14px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccd3e0;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 1em;
+    }
+
+    fieldset {
+      margin-top: 18px;
+      border: 1px solid #ccd3e0;
+      border-radius: 6px;
+    }
+
+    fieldset label,
+    .terms label {
+      display: inline;
+      font-weight: normal;
+      margin-right: 14px;
+    }
+
+    .terms {
+      margin-top: 18px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #1d3557;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #457b9d;
+    }
+
+    .info {
+      margin-top: 30px;
+    }
+
+    footer {
+      background-color: #1d3557;
+      color: #ffffff;
+      text-align: center;
+      padding: 14px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>Dynamic Student Portal</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="timetable.html">Timetable</a>
+      <a href="register.html">Register</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Student Registration</h1>
+
+    <form id="register-form" action="#" method="post">
+
+      <label for="fullname">Full name</label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      <label for="email">Email address</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="dob">Date of birth</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label for="course">Course of study</label>
+      <select id="course" name="course" required>
+        <option value="">-- Select a course --</option>
+        <option value="computer-science">Computer Science</option>
+        <option value="information-technology">Information Technology</option>
+        <option value="business">Business Administration</option>
+        <option value="engineering">Engineering</option>
+      </select>
+
+      <fieldset>
+        <legend>Gender</legend>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+      </fieldset>
+
+      <div class="terms">
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I agree to the terms and conditions</label>
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <section class="info">
+      <h2>Admission Requirements</h2>
+      <ul>
+        <li>Completed secondary school certificate</li>
+        <li>Copy of national ID or passport</li>
+        <li>Two passport-size photos</li>
+        <li>Proof of fee payment</li>
+      </ul>
+
+      <h2>Registration Steps</h2>
+      <ol>
+        <li>Fill in the registration form above</li>
+        <li>Submit your documents to the admissions office</li>
+        <li>Pay the registration fee</li>
+        <li>Collect your student ID and timetable</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Dynamic Student Portal. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
