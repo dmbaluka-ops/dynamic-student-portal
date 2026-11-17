@@ -18,13 +18,32 @@ if (yearOfStudy === 1) {
 for (let i = 1; i <= 5; i++) {
   console.log("Count: " + i);
 }
+
+// ---------- Lab 10: Student class ----------
+
+class Student {
+  constructor(name, email, course) {
+    this.name = name;
+    this.email = email;
+    this.course = course;
+  }
+
+  getSummary() {
+    return this.name + " (" + this.email + ") is studying " + this.course;
+  }
+}
+
+// Quick test: open the console to see the result
+const testStudent = new Student("Amina Yusuf", "amina@example.com", "Computer Science");
+console.log(testStudent.getSummary());
+
 // ---------- Lab 9: students loaded from JSON ----------
 
 // Adds ONE student object to the page
 function addStudentToPage(student) {
   const list = document.getElementById("student-list");
   const item = document.createElement("li");
-  item.textContent = student.name + " - " + student.course + " (Year " + student.year + ")";
+  item.textContent = student.getSummary();
   list.appendChild(item);
 }
 
@@ -53,7 +72,11 @@ async function loadStudents() {
       throw new Error("Server replied with status " + response.status);
     }
 
-    const students = await response.json();
+    const data = await response.json();
+    const students = data.map(function (s) {
+      return new Student(s.name, s.email, s.course);
+    });
+
     message.textContent = "";
     displayAllStudents(students);
   } catch (error) {

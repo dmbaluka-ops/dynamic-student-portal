@@ -1,7 +1,7 @@
 [
-  { "name": "Amina Yusuf", "course": "Computer Science", "year": 2 },
-  { "name": "Brian Otieno", "course": "Information Technology", "year": 1 },
-  { "name": "Chloe Wanjiru", "course": "Business Administration", "year": 3 },
-  { "name": "David Kamau", "course": "Engineering", "year": 2 },
-  { "name": "Duke Prince", "course": "Data Science", "year": 1 }
+  { "name": "Amina Yusuf", "email": "amina@kingdom.com", "course": "Computer Science", "year": 2 },
+  { "name": "Brian Otieno", "email": "brian@kingdom.com", "course": "Information Technology", "year": 1 },
+  { "name": "Chloe Wanjiru", "email": "chloe@kingdom.com", "course": "Business Administration", "year": 3 },
+  { "name": "David Kamau", "email": "david@kingdom.com", "course": "Engineering", "year": 2 },
+  { "name": "Duke Prince", "email": "duke@kingdom.com", "course": "Data Science", "year": 1 }
 ]
