@@ -37,7 +37,7 @@ class Student {
 const testStudent = new Student("Amina Yusuf", "amina@example.com", "Computer Science");
 console.log(testStudent.getSummary());
 
-// ---------- Lab 9: students loaded from JSON ----------
+
 
 // Adds ONE student object to the page
 function addStudentToPage(student) {
@@ -60,7 +60,7 @@ function displayAllStudents(studentArray) {
     "Registered Students (" + studentArray.length + ")";
 }
 
-// Fetches the JSON, then displays it
+
 async function loadStudents() {
   const message = document.getElementById("status-message");
   message.textContent = "Loading...";
@@ -85,5 +85,5 @@ async function loadStudents() {
   }
 }
 
-// Run it when the button is clicked
+
 document.getElementById("show-students").addEventListener("click", loadStudents);
