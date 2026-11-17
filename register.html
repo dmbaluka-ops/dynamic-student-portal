@@ -84,14 +84,34 @@
 
   <script>
   const form = document.getElementById("register-form");
-  const nameInput = document.getElementById("fullname");
 
-  form.addEventListener("submit", function (event) {
-    if (nameInput.value.trim() === "") {
-      event.preventDefault();
-      alert("Please enter your full name.");
-    }
-  });
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const namePattern = /^[A-Za-z ]+$/;
+
+form.addEventListener("submit", function (event) {
+  const name = document.getElementById("fullname").value.trim();
+  const email = document.getElementById("email").value.trim();
+
+  if (name === "") {
+    event.preventDefault();
+    alert("Please enter your full name.");
+    return;
+  }
+
+  if (!namePattern.test(name)) {
+    event.preventDefault();
+    alert("Name can only contain letters and spaces.");
+    return;
+  }
+
+  if (!emailPattern.test(email)) {
+    event.preventDefault();
+    alert("Please enter a valid email address, like name@example.com.");
+    return;
+  }
+});
+  
+    
 </script>
 
 </body>
